@@ -1,0 +1,90 @@
+pageType: final
+background:
+  type: solid
+  color: "#FFFFFF"
+elements:
+  - elementId: h1
+    elementType: text
+    bounds: [60, 40, 840, 50]
+    content:
+      style: "$h1"
+      text: 结论
+  - elementId: c1-num
+    elementType: text
+    bounds: [60, 115, 50, 40]
+    content:
+      fontSize: 26
+      color: "#2E8B7E"
+      bold: true
+      text: "①"
+  - elementId: c1-title
+    elementType: text
+    bounds: [120, 118, 500, 36]
+    content:
+      style: "$h2"
+      fontSize: 18
+      text: 任务本质决定架构
+  - elementId: c1-body
+    elementType: text
+    bounds: [120, 158, 780, 55]
+    content:
+      style: "$body"
+      fontSize: 15
+      text: 测井相分类是"单点特征分类",MLP 的全局组合假设最匹配 → seq 泛化最好(80.9%)→ 目标①✓
+  - elementId: c2-num
+    elementType: text
+    bounds: [60, 235, 50, 40]
+    content:
+      fontSize: 26
+      color: "#2E8B7E"
+      bold: true
+      text: "②"
+  - elementId: c2-title
+    elementType: text
+    bounds: [120, 238, 500, 36]
+    content:
+      style: "$h2"
+      fontSize: 18
+      text: 架构要匹配数据形态
+  - elementId: c2-body
+    elementType: text
+    bounds: [120, 278, 780, 55]
+    content:
+      style: "$body"
+      fontSize: 15
+      text: LSTM 时间步=1 → 序列能力失效;CNN 特征维度卷积 → 归纳偏置错位、少数类学不会 → 目标②✓
+  - elementId: c3-num
+    elementType: text
+    bounds: [60, 355, 50, 40]
+    content:
+      fontSize: 26
+      color: "#2E8B7E"
+      bold: true
+      text: "③"
+  - elementId: c3-title
+    elementType: text
+    bounds: [120, 358, 500, 36]
+    content:
+      style: "$h2"
+      fontSize: 18
+      text: 评估方式决定结论
+  - elementId: c3-body
+    elementType: text
+    bounds: [120, 398, 780, 55]
+    content:
+      style: "$body"
+      fontSize: 15
+      text: 按井无泄漏评估暴露泄漏切分掩盖的失败(rnn 45.8% → 0%);复现有效(seq 68.9% ≈ 原作者 69.8%)→ 目标③✓
+  - elementId: footer-page
+    elementType: text
+    bounds: [860, 480, 40, 30]
+    content:
+      style: "$foot"
+      align: [right, top]
+      text: 09
+  - elementId: footer-byline
+    elementType: text
+    bounds: [60, 505, 600, 24]
+    content:
+      style: "$foot"
+      text: 2026-08 · 测井岩性相分类实验

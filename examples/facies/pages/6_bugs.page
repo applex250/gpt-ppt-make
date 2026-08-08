@@ -1,0 +1,103 @@
+pageType: content
+background:
+  type: solid
+  color: "#FFFFFF"
+elements:
+  - elementId: h1
+    elementType: text
+    bounds: [60, 40, 840, 50]
+    content:
+      style: "$h1"
+      text: 转换中发现并修复的三个问题
+  - elementId: b1-num
+    elementType: text
+    bounds: [60, 115, 50, 40]
+    content:
+      fontSize: 26
+      color: "#2E8B7E"
+      bold: true
+      text: "①"
+  - elementId: b1-title
+    elementType: text
+    bounds: [120, 118, 500, 36]
+    content:
+      style: "$h2"
+      fontSize: 18
+      text: 标签语义 off-by-one(原版 bug)
+  - elementId: b1-body
+    elementType: text
+    bounds: [120, 158, 780, 55]
+    content:
+      style: "$body"
+      fontSize: 14
+      text: |
+        <p>原版 Dense(10) + 标签 1-9 直接当索引 → 索引 0 死区、类 9 对应索引 9 而非 8。
+        修正:输出 9 类 + labels−1 映射 0-8。必须训练前修,事后 argmax+1 是错误解读。</p>
+  - elementId: b2-num
+    elementType: text
+    bounds: [60, 235, 50, 40]
+    content:
+      fontSize: 26
+      color: "#2E8B7E"
+      bold: true
+      text: "②"
+  - elementId: b2-title
+    elementType: text
+    bounds: [120, 238, 500, 36]
+    content:
+      style: "$h2"
+      fontSize: 18
+      text: evaluate 误加 L2 正则(转换引入)
+  - elementId: b2-body
+    elementType: text
+    bounds: [120, 278, 780, 55]
+    content:
+      style: "$body"
+      fontSize: 14
+      text: |
+        <p>验证集 loss 混入 l2_loss,污染 ModelCheckpoint 选优与 ReduceLROnPlateau 监控。
+        修正:验证 loss 只算纯 CrossEntropy(原版 Keras 的 val_loss 同样不含正则)。</p>
+  - elementId: b3-num
+    elementType: text
+    bounds: [60, 355, 50, 40]
+    content:
+      fontSize: 26
+      color: "#2E8B7E"
+      bold: true
+      text: "③"
+  - elementId: b3-title
+    elementType: text
+    bounds: [120, 358, 500, 36]
+    content:
+      style: "$h2"
+      fontSize: 18
+      text: 验证集切分泄漏(原版 bug)
+  - elementId: b3-body
+    elementType: text
+    bounds: [120, 398, 780, 55]
+    content:
+      style: "$body"
+      fontSize: 14
+      text: |
+        <p>打乱后顺序取前 640 条 → 同井相邻样本(岩性几乎相同)同时进训练/验证,分数虚高。
+        改进:按井划分,留出整口 Recruit F9,并只在训练井上 fit scaler。</p>
+  - elementId: footer-nav
+    elementType: text
+    bounds: [60, 480, 400, 30]
+    content:
+      style: "$foot"
+      text: |
+        <p>背景  数据  模型  训练  结果</p>
+  - elementId: footer-page
+    elementType: text
+    bounds: [860, 480, 40, 30]
+    content:
+      style: "$foot"
+      align: [right, top]
+      text: 06
+  - elementId: footer-byline
+    elementType: text
+    bounds: [60, 505, 600, 24]
+    content:
+      style: "$foot"
+      text: 2026-08 · 测井岩性相分类实验

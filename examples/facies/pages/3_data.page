@@ -1,0 +1,126 @@
+pageType: content
+background:
+  type: solid
+  color: "#FFFFFF"
+elements:
+  - elementId: h1
+    elementType: text
+    bounds: [60, 40, 840, 50]
+    content:
+      style: "$h1"
+      text: 数据与特征工程
+  - elementId: tbl
+    elementType: table
+    bounds: [60, 110, 520, 160]
+    columnWidths: [0.24, 0.26, 0.5]
+    rowHeights: [0.17, 0.166, 0.166, 0.166, 0.166, 0.166]
+    style: "$default"
+    rows:
+      - - text: 特征
+        - text: 类型
+        - text: 地质含义
+      - - text: GR
+        - text: 自然伽马
+        - text: 泥质含量
+      - - text: ILD_log10
+        - text: 电阻率
+        - text: 孔隙流体/渗透性
+      - - text: DeltaPHI
+        - text: 密度-中子差
+        - text: 天然气指示
+      - - text: PHIND
+        - text: 中子孔隙度
+        - text: 孔隙度
+      - - text: PE / RELPOS
+        - text: 光电 / 相对位置
+        - text: 岩性矿物 / 层内位置
+  - elementId: tbl-foot
+    elementType: text
+    bounds: [60, 335, 520, 24]
+    content:
+      style: "$small"
+      fontSize: 11
+      text: |
+        <p><sup>a</sup> 6 维输入特征,StandardScaler 标准化(均值 0, 方差 1)</p>
+  - elementId: h2-flow
+    elementType: text
+    bounds: [620, 110, 280, 36]
+    content:
+      style: "$h2"
+      text: 数据流程
+  - elementId: f1
+    elementType: shape
+    bounds: [620, 160, 10, 10]
+    shapeName: rect
+    fill: {type: solid, color: "#2E8B7E"}
+  - elementId: f1-text
+    elementType: text
+    bounds: [642, 148, 260, 40]
+    content:
+      style: "$body"
+      fontSize: 14
+      text: PE 列 22% 缺失 → dropna 删除 917 条
+  - elementId: f2
+    elementType: shape
+    bounds: [620, 206, 10, 10]
+    shapeName: rect
+    fill: {type: solid, color: "#2E8B7E"}
+  - elementId: f2-text
+    elementType: text
+    bounds: [642, 194, 260, 40]
+    content:
+      style: "$body"
+      fontSize: 14
+      text: StandardScaler 标准化(均值 0, 方差 1)
+  - elementId: f3
+    elementType: shape
+    bounds: [620, 252, 10, 10]
+    shapeName: rect
+    fill: {type: solid, color: "#2E8B7E"}
+  - elementId: f3-text
+    elementType: text
+    bounds: [642, 240, 260, 40]
+    content:
+      style: "$body"
+      fontSize: 14
+      text: 随机打乱 (seed=42) → 前 640 条验证
+  - elementId: warn
+    elementType: text
+    bounds: [620, 300, 280, 70]
+    content:
+      style: "$small"
+      text: |
+        <p><span style="color:#C0504D;font-weight:bold;">⚠ 数据泄漏</span>:同井相邻样本(岩性几乎相同)被拆进训练/验证,分数虚高。</p>
+        <p>改进:按井划分,留出整口 Recruit F9。</p>
+  - elementId: chart-title
+    elementType: text
+    bounds: [60, 265, 400, 24]
+    content:
+      style: "$h2"
+      fontSize: 14
+      text: 训练集类分布(类不平衡)
+  - elementId: chart-dist
+    elementType: image
+    bounds: [60, 292, 315, 180]
+    src: "media/chart_dist.png"
+    fit: {mode: contain}
+  - elementId: footer-nav
+    elementType: text
+    bounds: [60, 480, 400, 30]
+    content:
+      style: "$foot"
+      text: |
+        <p>背景  <strong>数据</strong>  模型  训练  结果</p>
+  - elementId: footer-page
+    elementType: text
+    bounds: [860, 480, 40, 30]
+    content:
+      style: "$foot"
+      align: [right, top]
+      text: 03
+  - elementId: footer-byline
+    elementType: text
+    bounds: [60, 505, 600, 24]
+    content:
+      style: "$foot"
+      text: 2026-08 · 测井岩性相分类实验

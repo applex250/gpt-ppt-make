@@ -1,0 +1,74 @@
+version: v2
+title: 测井岩性相分类实验 — 三种深度学习模型对比
+size: [960, 540]
+theme:
+  colors:
+    bg: "#FFFFFF"
+    ink: "#1A1A1A"
+    ink-muted: "#8C8C8C"
+    line: "#BFBFBF"
+    accent: "#2E8B7E"
+    accent-wash: "#DFF1EE"
+    info: "#5B9BD5"
+    info-wash: "#E8F1FA"
+    highlight: "#F2B90F"
+    annotate: "#8E5AA8"
+    danger: "#C0504D"
+    neutral-tag: "#9AA5B1"
+  textStyles:
+    h0:
+      fontSize: 42
+      color: "#1A1A1A"
+      bold: true
+      fontFamily: {latin: "QuattrocentoSans", ea: "MiSans"}
+    h1:
+      fontSize: 28
+      color: "#1A1A1A"
+      bold: true
+      fontFamily: {latin: "QuattrocentoSans", ea: "MiSans"}
+    h2:
+      fontSize: 20
+      color: "#1A1A1A"
+      bold: true
+      fontFamily: {latin: "QuattrocentoSans", ea: "MiSans"}
+    body:
+      fontSize: 16
+      color: "#1A1A1A"
+      lineHeight: 1.35
+      fontFamily: {latin: "QuattrocentoSans", ea: "MiSans"}
+    small:
+      fontSize: 12
+      color: "#8C8C8C"
+      lineHeight: 1.3
+      fontFamily: {latin: "QuattrocentoSans", ea: "MiSans"}
+    foot:
+      fontSize: 10
+      color: "#8C8C8C"
+      fontFamily: {latin: "QuattrocentoSans", ea: "MiSans"}
+  tableStyles:
+    default:
+      cellStyle:
+        color: "#1A1A1A"
+        fontSize: 14
+        border: {style: solid, width: 0.75, color: "#BFBFBF"}
+        align: [left, middle]
+        fontFamily: {latin: "QuattrocentoSans", ea: "MiSans"}
+      firstRowStyle:
+        color: "#1A1A1A"
+        bold: true
+        border: [{style: solid, width: 1.5, color: "#1A1A1A"}, null,
+                 {style: solid, width: 0.75, color: "#BFBFBF"}, null]
+      lastRowStyle:
+        border: [null, null, {style: solid, width: 1.5, color: "#1A1A1A"}, null]
+      bodyStyles:
+        - {fill: {type: solid, color: "#FFFFFF"}}
+pages:
+  - pages/1_cover.page
+  - pages/2_background.page
+  - pages/3_data.page
+  - pages/4_models.page
+  - pages/5_training.page
+  - pages/6_bugs.page
+  - pages/7_results.page
+  - pages/8_analysis.page
+  - pages/9_conclusion.page

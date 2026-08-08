@@ -1,0 +1,74 @@
+pageType: content
+background:
+  type: solid
+  color: "#FFFFFF"
+elements:
+  - elementId: h1
+    elementType: text
+    bounds: [60, 40, 840, 50]
+    content:
+      style: "$h1"
+      text: 三种模型架构(忠实转换原 Keras 实现)
+  - elementId: tbl
+    elementType: table
+    bounds: [60, 110, 840, 210]
+    columnWidths: [0.14, 0.42, 0.2, 0.24]
+    rowHeights: [0.2, 0.27, 0.27, 0.26]
+    style: "$default"
+    rows:
+      - - text: 模型
+        - text: 结构
+        - text: 输入
+        - text: 参数量
+      - - text: seq
+        - text: Dense 512→256→128→128→64→9,每层 Dropout(0.5),末层 L2
+        - text: 6 维向量
+        - text: 193,161
+      - - text: cnn
+        - text: Conv1D(64,k=3)×3 + MaxPool + Dense 128→64→9
+        - text: (6, 1) 伪序列
+        - text: 58,505
+      - - text: rnn
+        - text: 8 层 LSTM 512→…→32→9,时间步=1
+        - text: (1, 6) 单步
+        - text: 2,280,294
+  - elementId: tbl-foot
+    elementType: text
+    bounds: [60, 325, 840, 24]
+    content:
+      style: "$small"
+      fontSize: 11
+      text: |
+        <p><sup>a</sup> 损失统一为 nn.CrossEntropyLoss;L2 只作用于原实现指定层;标签修正为 9 类输出</p>
+  - elementId: chart-title
+    elementType: text
+    bounds: [60, 355, 400, 24]
+    content:
+      style: "$h2"
+      fontSize: 14
+      text: 参数量对比(百万参数,对数轴)
+  - elementId: chart-params
+    elementType: image
+    bounds: [60, 382, 840, 110]
+    src: "media/chart_params.png"
+    fit: {mode: contain}
+  - elementId: footer-nav
+    elementType: text
+    bounds: [60, 480, 400, 30]
+    content:
+      style: "$foot"
+      text: |
+        <p>背景  数据  <strong>模型</strong>  训练  结果</p>
+  - elementId: footer-page
+    elementType: text
+    bounds: [860, 480, 40, 30]
+    content:
+      style: "$foot"
+      align: [right, top]
+      text: 04
+  - elementId: footer-byline
+    elementType: text
+    bounds: [60, 505, 600, 24]
+    content:
+      style: "$foot"
+      text: 2026-08 · 测井岩性相分类实验

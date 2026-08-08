@@ -1,0 +1,174 @@
+pageType: content
+background:
+  type: solid
+  color: "#FFFFFF"
+elements:
+  - elementId: h1
+    elementType: text
+    bounds: [60, 40, 840, 50]
+    content:
+      style: "$h1"
+      text: 按井评估:谁真正学会了
+  - elementId: h2-seq
+    elementType: text
+    bounds: [60, 115, 260, 36]
+    content:
+      style: "$h2"
+      fontSize: 18
+      text: seq — 泛化最好
+  - elementId: seq-check
+    elementType: shape
+    bounds: [60, 162, 12, 12]
+    shapeName: rect
+    fill: {type: solid, color: "#2E8B7E"}
+  - elementId: seq1
+    elementType: text
+    bounds: [84, 150, 240, 40]
+    content:
+      style: "$body"
+      fontSize: 14
+      text: 训练集 9 类全学会(54%–83%)
+  - elementId: seq-check2
+    elementType: shape
+    bounds: [60, 198, 12, 12]
+    shapeName: rect
+    fill: {type: solid, color: "#2E8B7E"}
+  - elementId: seq2
+    elementType: text
+    bounds: [84, 186, 240, 40]
+    content:
+      style: "$body"
+      fontSize: 14
+      text: 新井 80.9%,训练→验证无断层
+  - elementId: seq-check3
+    elementType: shape
+    bounds: [60, 234, 12, 12]
+    shapeName: rect
+    fill: {type: solid, color: "#2E8B7E"}
+  - elementId: seq3
+    elementType: text
+    bounds: [84, 222, 240, 40]
+    content:
+      style: "$body"
+      fontSize: 14
+      text: 归纳偏置匹配"单点特征分类"
+  - elementId: h2-cnn
+    elementType: text
+    bounds: [360, 115, 260, 36]
+    content:
+      style: "$h2"
+      fontSize: 18
+      text: cnn — 少数类失败
+  - elementId: cnn-x1
+    elementType: shape
+    bounds: [360, 162, 12, 12]
+    shapeName: rect
+    fill: {type: solid, color: "#C0504D"}
+  - elementId: cnn1
+    elementType: text
+    bounds: [384, 150, 240, 40]
+    content:
+      style: "$body"
+      fontSize: 14
+      text: 训练集 BS 类 0/93 没学会
+  - elementId: cnn-x2
+    elementType: shape
+    bounds: [360, 198, 12, 12]
+    shapeName: rect
+    fill: {type: solid, color: "#C0504D"}
+  - elementId: cnn2
+    elementType: text
+    bounds: [384, 186, 240, 40]
+    content:
+      style: "$body"
+      fontSize: 14
+      text: 验证井 0% 是训练集 0% 的延伸
+  - elementId: cnn-x3
+    elementType: shape
+    bounds: [360, 234, 12, 12]
+    shapeName: rect
+    fill: {type: solid, color: "#C0504D"}
+  - elementId: cnn3
+    elementType: text
+    bounds: [384, 222, 240, 40]
+    content:
+      style: "$body"
+      fontSize: 14
+      text: 特征维度卷积,归纳偏置不匹配
+  - elementId: h2-rnn
+    elementType: text
+    bounds: [660, 115, 260, 36]
+    content:
+      style: "$h2"
+      fontSize: 18
+      text: rnn — 坍缩假象
+  - elementId: rnn-x1
+    elementType: shape
+    bounds: [660, 162, 12, 12]
+    shapeName: rect
+    fill: {type: solid, color: "#C0504D"}
+  - elementId: rnn1
+    elementType: text
+    bounds: [684, 150, 240, 40]
+    content:
+      style: "$body"
+      fontSize: 14
+      text: 时间步=1 → 无序列可学
+  - elementId: rnn-x2
+    elementType: shape
+    bounds: [660, 198, 12, 12]
+    shapeName: rect
+    fill: {type: solid, color: "#C0504D"}
+  - elementId: rnn2
+    elementType: text
+    bounds: [684, 186, 240, 40]
+    content:
+      style: "$body"
+      fontSize: 14
+      text: 8 类全判错,只学会"全判 BS"
+  - elementId: rnn-x3
+    elementType: shape
+    bounds: [660, 234, 12, 12]
+    shapeName: rect
+    fill: {type: solid, color: "#C0504D"}
+  - elementId: rnn3
+    elementType: text
+    bounds: [684, 222, 240, 40]
+    content:
+      style: "$body"
+      fontSize: 14
+      text: 验证井 100% 是巧合,换井即崩
+  - elementId: concl-rule
+    elementType: line
+    bounds: [60, 330, 840, 3]
+    viewBox: [840, 3]
+    points: "0,1.5 840,1.5"
+    border: {style: solid, width: 3, color: "#2E8B7E"}
+  - elementId: concl
+    elementType: text
+    bounds: [60, 350, 840, 100]
+    content:
+      style: "$body"
+      fontSize: 16
+      text: |
+        <p><strong>结论:</strong>仅 seq 学到可泛化规律。三种评估口径排序一致——按井 <span style="color:#2E8B7E;font-weight:bold;">80.9%</span> > 0%/0%;泄漏 68.9% > 55.9% > 45.8%;原作者 Keras 69.8% 仅 seq 有记录。</p>
+  - elementId: footer-nav
+    elementType: text
+    bounds: [60, 480, 400, 30]
+    content:
+      style: "$foot"
+      text: |
+        <p>背景  数据  模型  训练  结果</p>
+  - elementId: footer-page
+    elementType: text
+    bounds: [860, 480, 40, 30]
+    content:
+      style: "$foot"
+      align: [right, top]
+      text: 08
+  - elementId: footer-byline
+    elementType: text
+    bounds: [60, 505, 600, 24]
+    content:
+      style: "$foot"
+      text: 2026-08 · 测井岩性相分类实验

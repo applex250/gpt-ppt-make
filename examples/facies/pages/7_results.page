@@ -1,0 +1,72 @@
+pageType: content
+background:
+  type: solid
+  color: "#FFFFFF"
+elements:
+  - elementId: h1
+    elementType: text
+    bounds: [60, 40, 840, 50]
+    content:
+      style: "$h1"
+      text: 实验结果:两种评估口径对比
+  - elementId: img-main
+    elementType: image
+    bounds: [60, 105, 500, 330]
+    src: "media/facies_compare_leak_vs_clean.png"
+    fit: {mode: contain}
+  - elementId: caption
+    elementType: text
+    bounds: [60, 440, 500, 24]
+    content:
+      style: "$small"
+      fontSize: 11
+      text: |
+        <p><sup>c</sup> 图 1 验证损失/准确率曲线(实线=泄漏切分,虚线=按井无泄漏)</p>
+  - elementId: tbl
+    elementType: table
+    bounds: [600, 105, 300, 190]
+    columnWidths: [0.3, 0.35, 0.35]
+    rowHeights: [0.25, 0.25, 0.25, 0.25]
+    style: "$default"
+    rows:
+      - - text: 模型
+        - text: 泄漏切分
+        - text: 按井无泄漏
+      - - text: seq
+        - text: 68.9%
+        - text: 80.9%
+      - - text: cnn
+        - text: 55.9%
+        - text: 0.0%
+      - - text: rnn
+        - text: 45.8%
+        - text: 100%*
+  - elementId: tbl-note
+    elementType: text
+    bounds: [600, 305, 300, 150]
+    content:
+      style: "$small"
+      fontSize: 11
+      text: |
+        <p><span style="color:#C0504D;font-weight:bold;">*</span> rnn 的 100% 是"全判 BS"坍缩假象:训练集整体 acc 仅 2.9%(=BS 占比),验证井恰好全 BS。</p>
+        <p>注:泄漏切分与原作者 Keras 结果一致(seq 69.8%),验证复现有效。</p>
+  - elementId: footer-nav
+    elementType: text
+    bounds: [60, 480, 400, 30]
+    content:
+      style: "$foot"
+      text: |
+        <p>背景  数据  模型  训练  <strong>结果</strong></p>
+  - elementId: footer-page
+    elementType: text
+    bounds: [860, 480, 40, 30]
+    content:
+      style: "$foot"
+      align: [right, top]
+      text: 07
+  - elementId: footer-byline
+    elementType: text
+    bounds: [60, 505, 600, 24]
+    content:
+      style: "$foot"
+      text: 2026-08 · 测井岩性相分类实验

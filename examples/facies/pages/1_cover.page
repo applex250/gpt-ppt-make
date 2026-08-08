@@ -1,0 +1,62 @@
+pageType: cover
+background:
+  type: solid
+  color: "#FFFFFF"
+elements:
+  - elementId: title-h0
+    elementType: text
+    bounds: [60, 70, 840, 90]
+    content:
+      style: "$h0"
+      align: [left, top]
+      text: 测井岩性相分类实验
+  - elementId: subtitle
+    elementType: text
+    bounds: [60, 160, 840, 50]
+    content:
+      style: "$body"
+      fontSize: 22
+      color: "#2E8B7E"
+      text: 三种深度学习模型的对比与复现 — Keras 转 PyTorch
+  - elementId: byline
+    elementType: text
+    bounds: [60, 215, 840, 30]
+    content:
+      style: "$small"
+      text: 实验报告 · 2026-08
+  - elementId: banner
+    elementType: shape
+    bounds: [0, 350, 960, 190]
+    shapeName: rect
+    fill: {type: solid, color: "#2E8B7E"}
+  - elementId: banner-num1
+    elementType: text
+    bounds: [60, 390, 200, 60]
+    content:
+      fontSize: 34
+      color: "#FFFFFF"
+      bold: true
+      text: 9 类岩相
+  - elementId: banner-num2
+    elementType: text
+    bounds: [320, 390, 200, 60]
+    content:
+      fontSize: 34
+      color: "#FFFFFF"
+      bold: true
+      text: 10 口井
+  - elementId: banner-num3
+    elementType: text
+    bounds: [580, 390, 260, 60]
+    content:
+      fontSize: 34
+      color: "#FFFFFF"
+      bold: true
+      text: 4,149 条样本
+  - elementId: banner-sub
+    elementType: text
+    bounds: [60, 455, 840, 40]
+    content:
+      fontSize: 14
+      color: "#DFF1EE"
+      text: 美国 Hugoton 气田 · SEG 2016 相分类竞赛数据集 · 测井曲线预测岩性

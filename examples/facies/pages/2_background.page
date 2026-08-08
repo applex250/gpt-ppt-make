@@ -1,0 +1,106 @@
+pageType: content
+background:
+  type: solid
+  color: "#FFFFFF"
+elements:
+  - elementId: h1
+    elementType: text
+    bounds: [60, 40, 840, 50]
+    content:
+      style: "$h1"
+      text: 任务背景:测井数据中的岩性识别
+  - elementId: h2-q
+    elementType: text
+    bounds: [60, 120, 400, 36]
+    content:
+      style: "$h2"
+      text: 问题
+  - elementId: sq1
+    elementType: shape
+    bounds: [60, 170, 10, 10]
+    shapeName: rect
+    fill: {type: solid, color: "#2E8B7E"}
+  - elementId: body-q1
+    elementType: text
+    bounds: [82, 158, 480, 50]
+    content:
+      style: "$body"
+      fontSize: 15
+      text: 岩心取样昂贵且不连续;测井曲线连续记录地下地层物理响应
+  - elementId: sq2
+    elementType: shape
+    bounds: [60, 224, 10, 10]
+    shapeName: rect
+    fill: {type: solid, color: "#2E8B7E"}
+  - elementId: body-q2
+    elementType: text
+    bounds: [82, 212, 480, 50]
+    content:
+      style: "$body"
+      fontSize: 15
+      text: 任务:仅凭测井曲线预测每 0.5 英尺的岩性相,共 9 类
+  - elementId: h2-d
+    elementType: text
+    bounds: [60, 300, 400, 36]
+    content:
+      style: "$h2"
+      text: 数据来源
+  - elementId: sq3
+    elementType: shape
+    bounds: [60, 350, 10, 10]
+    shapeName: rect
+    fill: {type: solid, color: "#2E8B7E"}
+  - elementId: body-d1
+    elementType: text
+    bounds: [82, 338, 480, 50]
+    content:
+      style: "$body"
+      fontSize: 15
+      text: 美国堪萨斯州 Hugoton 气田,10 口井,4,149 条深度样本
+  - elementId: sq4
+    elementType: shape
+    bounds: [60, 404, 10, 10]
+    shapeName: rect
+    fill: {type: solid, color: "#2E8B7E"}
+  - elementId: body-d2
+    elementType: text
+    bounds: [82, 392, 480, 50]
+    content:
+      style: "$body"
+      fontSize: 15
+      text: SEG 2016 相分类竞赛公开数据集(训练集 facies_vectors.csv)
+  - elementId: fact-rule
+    elementType: line
+    bounds: [620, 120, 280, 2]
+    viewBox: [280, 2]
+    points: "0,1 280,1"
+    border: {style: solid, width: 1, color: "#BFBFBF"}
+  - elementId: fact-note
+    elementType: text
+    bounds: [620, 140, 280, 90]
+    content:
+      style: "$small"
+      text: |
+        类间样本数差异大 (98 ~ 738 条)
+        类不平衡是后续关键问题之一
+        输入为 6 维标准化测井特征
+  - elementId: footer-nav
+    elementType: text
+    bounds: [60, 480, 400, 30]
+    content:
+      style: "$foot"
+      text: |
+        <p><strong>背景</strong>  数据  模型  训练  结果</p>
+  - elementId: footer-page
+    elementType: text
+    bounds: [860, 480, 40, 30]
+    content:
+      style: "$foot"
+      align: [right, top]
+      text: 02
+  - elementId: footer-byline
+    elementType: text
+    bounds: [60, 505, 600, 24]
+    content:
+      style: "$foot"
+      text: 2026-08 · 测井岩性相分类实验

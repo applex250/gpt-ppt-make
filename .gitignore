@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# QA 产物
+.qa-local/
+.qa-images/
+
+# 输出
+output.pptx
+*.pdf
+
+# 系统
+.DS_Store

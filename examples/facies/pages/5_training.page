@@ -1,0 +1,113 @@
+pageType: content
+background:
+  type: solid
+  color: "#FFFFFF"
+elements:
+  - elementId: h1
+    elementType: text
+    bounds: [60, 40, 840, 50]
+    content:
+      style: "$h1"
+      text: 训练策略:CLR 循环学习率 + LR Finder
+  - elementId: h2-clr
+    elementType: text
+    bounds: [60, 115, 400, 36]
+    content:
+      style: "$h2"
+      text: 为什么用 CLR
+  - elementId: sq1
+    elementType: shape
+    bounds: [60, 165, 10, 10]
+    shapeName: rect
+    fill: {type: solid, color: "#2E8B7E"}
+  - elementId: b1
+    elementType: text
+    bounds: [82, 153, 460, 45]
+    content:
+      style: "$body"
+      fontSize: 14
+      text: 学习率过大震荡、过小停滞,是最关键超参数
+  - elementId: sq2
+    elementType: shape
+    bounds: [60, 214, 10, 10]
+    shapeName: rect
+    fill: {type: solid, color: "#2E8B7E"}
+  - elementId: b2
+    elementType: text
+    bounds: [82, 202, 460, 45]
+    content:
+      style: "$body"
+      fontSize: 14
+      text: CLR (Leslie Smith 2017):学习率在区间内周期波动
+  - elementId: sq3
+    elementType: shape
+    bounds: [60, 263, 10, 10]
+    shapeName: rect
+    fill: {type: solid, color: "#2E8B7E"}
+  - elementId: b3
+    elementType: text
+    bounds: [82, 251, 460, 45]
+    content:
+      style: "$body"
+      fontSize: 14
+      text: 大学习率探索 + 逃逸鞍点,小学习率精细收敛
+  - elementId: sq4
+    elementType: shape
+    bounds: [60, 312, 10, 10]
+    shapeName: rect
+    fill: {type: solid, color: "#2E8B7E"}
+  - elementId: b4
+    elementType: text
+    bounds: [82, 300, 460, 45]
+    content:
+      style: "$body"
+      fontSize: 14
+      text: exp_range:每 iteration 乘 γ=0.9999,整体指数衰减
+  - elementId: h2-finder
+    elementType: text
+    bounds: [60, 365, 400, 36]
+    content:
+      style: "$h2"
+      text: LR Finder 先探路
+  - elementId: finder
+    elementType: text
+    bounds: [60, 405, 460, 60]
+    content:
+      style: "$body"
+      fontSize: 14
+      text: |
+        <p>从 1e-6 指数升到 1e-2,扫描损失下降最快的区间。</p>
+        <p>实测(seq):建议起步 lr ≈ 2.5e-04。</p>
+  - elementId: chart-clr
+    elementType: image
+    bounds: [580, 115, 320, 220]
+    src: "media/chart_clr.png"
+    fit: {mode: contain}
+  - elementId: chart-foot
+    elementType: text
+    bounds: [580, 345, 320, 24]
+    content:
+      style: "$small"
+      fontSize: 11
+      text: |
+        <p><sup>b</sup> PyTorch CyclicLR 为 cycle 级衰减,原 Keras 为 iteration 级 → 手写 ExpRangeCLR</p>
+  - elementId: footer-nav
+    elementType: text
+    bounds: [60, 480, 400, 30]
+    content:
+      style: "$foot"
+      text: |
+        <p>背景  数据  模型  <strong>训练</strong>  结果</p>
+  - elementId: footer-page
+    elementType: text
+    bounds: [860, 480, 40, 30]
+    content:
+      style: "$foot"
+      align: [right, top]
+      text: 05
+  - elementId: footer-byline
+    elementType: text
+    bounds: [60, 505, 600, 24]
+    content:
+      style: "$foot"
+      text: 2026-08 · 测井岩性相分类实验
